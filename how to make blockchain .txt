@@ -1,0 +1,9 @@
+1-> make a class block and constructor to intialise all things
+2-> make genesis block
+3-> create mine block funcion
+4-> generate hash using crypto hash
+5-> create blockchain-> create chain a array of block objects and assign first block in chain array as genesis block
+6->create add block function in blockchain class
+7->create validate blockchain function in blockchain calss
+8->create replace chain in blockchain class
+9-> add nonce and difficulty to blockchain
