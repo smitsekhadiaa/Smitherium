@@ -1,4 +1,4 @@
-const { GENESIS_DATA } = require("./config.js");
+const { GENESIS_DATA, MINE_RATE } = require("./config.js");
 const cryptoHash = require("./crypto-hash.js");
 class Block {
   constructor({ timestamp, prevHash, hash, data, nonce, difficulty }) {
@@ -20,7 +20,7 @@ class Block {
     let hash, timestamp;
 
     const prevHash = prevBlock.hash;
-    const {difficulty}=prevBlock;
+    const { difficulty } = prevBlock;
     let nonce = 0;
 
     do {
@@ -38,8 +38,27 @@ class Block {
       difficulty,
     });
   }
+
+  //difficulty is adjusted in bitcoin as if miner take more time in mining than 10 mins then it next time it should be less to keep the avg as 10 mins.
+//here instead of 10 mins we will keep 1 min
+  static adjustDifficulty({ originalBlock, timestamp }) {
+    const { difficulty } = originalBlock;
+    if (difficulty < 1) {
+      return 1;
+    }
+    const difference = timestamp - originalBlock.timestamp;
+    if (difference > MINE_RATE) {
+      return difficulty--;
+    }
+    return difficulty++;
+  }
 }
-// F
+// const block1 = new Block({
+//   timestamp: "18/01/23",
+//   hash: "0xabc",
+//   prevHash: "0x123",
+//   data: "hello",
+// });
 // console.log(block1);
 
 // Genesis block-> the first block in blockchain is called genesis block
