@@ -52,9 +52,9 @@ class Block {
     }
     const difference = timestamp - originalBlock.timestamp;
     if (difference > MINE_RATE) {
-      return difficulty--;
+      return difficulty-1;
     }
-    return difficulty++;
+    return difficulty+1;
   }
 }
 // const block1 = new Block({
