@@ -20,12 +20,16 @@ class Block {
     let hash, timestamp;
 
     const prevHash = prevBlock.hash;
-    const { difficulty } = prevBlock;
+    let { difficulty } = prevBlock;
     let nonce = 0;
 
     do {
       nonce++;
       timestamp = Date.now();
+      difficulty = Block.adjustDifficulty({
+        originalBlock: prevBlock,
+        timestamp,
+      });
       hash = cryptoHash(timestamp, data, nonce, prevHash, difficulty);
     } while (hash.substring(0, difficulty) !== "0".repeat(difficulty));
 
@@ -40,7 +44,7 @@ class Block {
   }
 
   //difficulty is adjusted in bitcoin as if miner take more time in mining than 10 mins then it next time it should be less to keep the avg as 10 mins.
-//here instead of 10 mins we will keep 1 min
+  //here instead of 10 mins we will keep 1 min
   static adjustDifficulty({ originalBlock, timestamp }) {
     const { difficulty } = originalBlock;
     if (difficulty < 1) {
