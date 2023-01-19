@@ -20,8 +20,9 @@ class Block {
     let hash, timestamp;
 
     const prevHash = prevBlock.hash;
+    const {difficulty}=prevBlock;
     let nonce = 0;
-    
+
     do {
       nonce++;
       timestamp = Date.now();
@@ -32,16 +33,13 @@ class Block {
       timestamp,
       prevHash,
       data,
-      hash: cryptoHash(timestamp, prevHash, data),
+      hash,
+      nonce,
+      difficulty,
     });
   }
 }
-const block1 = new Block({
-  timestamp: "18/01/23",
-  hash: "0xabc",
-  prevHash: "0x123",
-  data: "hello",
-});
+// F
 // console.log(block1);
 
 // Genesis block-> the first block in blockchain is called genesis block

@@ -43,8 +43,8 @@ class Blockchain {
       const validateHash = cryptoHash(
         timestamp,
         data,
-        prevHash,
         nonce,
+        prevHash,
         difficulty
       );
       if (hash !== validateHash) {
@@ -56,8 +56,8 @@ class Blockchain {
 }
 const blockchain = new Blockchain();
 blockchain.addBlock({ data: "block 1" });
-// console.log(blockchain);
+console.log(blockchain);
 const result = Blockchain.isValidChain(blockchain.chain);
 console.log(result);
-console.log(blockchain.chain);
+// console.log(blockchain.chain);
 module.exports = Blockchain;

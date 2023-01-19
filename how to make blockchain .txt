@@ -7,3 +7,6 @@
 7->create validate blockchain function in blockchain calss
 8->create replace chain in blockchain class
 9-> add nonce and difficulty to blockchain
+10-> update all functions, add nonce and difficulty to hash generator
+11-> increase nonce value to generate different hash till you hit target
+
