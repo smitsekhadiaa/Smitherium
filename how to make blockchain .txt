@@ -10,5 +10,6 @@
 10-> update all functions, add nonce and difficulty to hash generator
 11-> increase nonce value to generate different hash till you hit target
 12-> calculate mining rate , i.e avg itme to make a block in blockchain.
-
+13-> increase difficulty for miners by converting hash from hex to binary 
+14-> limiting difficulty for miners
 

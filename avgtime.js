@@ -19,5 +19,5 @@ for (let i = 0; i < 1000; i++) {
   averageTime = times.reduce((total, num) => total + num) / times.length; //or use loop to calc avg
   console.log(
     `Time to mine block: ${timeDiff}ms, Difficulty: ${nextBlock.difficulty}, Average Time: ${averageTime}ms`
-  );
+  ); 
 }
