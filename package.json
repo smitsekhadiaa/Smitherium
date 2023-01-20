@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/smitsekhadiaa/Smitherium/issues"
   },
-  "homepage": "https://github.com/smitsekhadiaa/Smitherium#readme"
+  "homepage": "https://github.com/smitsekhadiaa/Smitherium#readme",
+  "dependencies": {
+    "hex-to-binary": "^1.0.1"
+  }
 }

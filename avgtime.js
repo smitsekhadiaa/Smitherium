@@ -3,6 +3,7 @@ const blockchain = new Blockchain(); //making new blockchain
 blockchain.addBlock({ data: "new data" });
 let prevTimeStamp, nextTimestamp, nextBlock, timeDiff, averageTime;
 const times = [];
+// console.log(blockchain.chain[blockchain.chain.length-1]);
 for (let i = 0; i < 1000; i++) {
   prevTimeStamp = blockchain.chain[blockchain.chain.length - 1].timestamp;
 
