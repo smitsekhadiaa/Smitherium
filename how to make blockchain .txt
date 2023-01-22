@@ -30,4 +30,4 @@
         create instance/object of the pubsub model in blockchain file
         assign different port numbers to different nodes as all the blockchain cannot be on the same server as all the system will not run on the same server
         sync all the peers with the blockchain if the new block is added to the chain.
-
+18-> Smitherium ready, Kharid lena pls
