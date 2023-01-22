@@ -12,4 +12,20 @@
 12-> calculate mining rate , i.e avg itme to make a block in blockchain.
 13-> increase difficulty for miners by converting hash from hex to binary 
 14-> limiting difficulty for miners
+15-> adding node and express to get and post data into Blockchain (establishing connection with one node)
+16-> establishing connection with multiple nodes in blockchain
+17-> distribute the blockchain to other nodes usign publish subscribe model
+        publisher-> cheez publish karte hai
+        subscriber-> grap published cheeze if they have subscribed to that channel for the publisher
+        there are many channels to publish for the publisher
+        miner create block,they put that info on the channel, for that we create channel called blockchain channel
+        if subsceiber has subscribed to that channel they will see the added block.
+        we use redis to publish 
 
+        a block is created and its info is passed to everyone that a new block is created so add it to their blockchain
+        for this communication we use the help of redis.
+
+        create a publisher and scubscriber in express file and channel array which contains blockchain channel
+        make the subsccriber subscribe to that channel to establish communication so subscriber gets notified whenever he recives a mesage
+        create instance/object of the pubsub model in blockchain file
+        assign different port numbers to different nodes as all the blockchain cannot be on the same server as all the system will not run on the same server

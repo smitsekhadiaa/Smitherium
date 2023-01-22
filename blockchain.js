@@ -16,7 +16,7 @@ class Blockchain {
 
   replaceChain(chain) {
     // longest chain rule
-    if (chain <= this.chain.length) {
+    if (chain.length <= this.chain.length) {
       console.error("the incoming chain is not longer");
       return;
     }
